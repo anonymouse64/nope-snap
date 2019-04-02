@@ -1,0 +1,19 @@
+name: nope
+version: '0.1'
+base: core18
+summary: nope
+description: nope
+architectures: [all]
+grade: stable
+confinement: strict
+
+apps:
+  nope:
+    command: bin/nope.sh
+    daemon: forking
+
+parts:
+  my-part:
+    plugin: dump
+    source: .
+    prime: [bin/*]
